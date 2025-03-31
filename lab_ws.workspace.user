@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 15.0.1, 2025-03-27T12:05:24. -->
+<!-- Written by QtCreator 15.0.1, 2025-03-31T16:49:31. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -129,7 +129,23 @@
     <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.CustomParsers"/>
     <value type="bool" key="ProjectExplorer.BuildConfiguration.ParseStandardOutput">false</value>
-    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges">
+     <value type="QString">AMENT_PREFIX_PATH=/home/nikita/lab_ws/install/test_triangle_subscriber:/home/nikita/lab_ws/install/test_triangle_publisher:/home/nikita/lab_ws/install/test_triangle_msg:/home/nikita/lab_ws/install/test_trajectory_srv:/home/nikita/lab_ws/install/test_trajectory_service:/home/nikita/lab_ws/install/test_trajectory_client:/home/nikita/lab_ws/install/test_subscriber_tr_rcv:/home/nikita/lab_ws/install/test_rec_sen:/home/nikita/lab_ws/install/test_pkg:/home/nikita/lab_ws/install/test_custom_srv:/home/nikita/lab_ws/install/test_custom_service:/home/nikita/lab_ws/install/test_custom_publisher:/home/nikita/lab_ws/install/test_custom_msg:/home/nikita/lab_ws/install/test_basic_subscriber:/home/nikita/lab_ws/install/test_basic_service:/home/nikita/lab_ws/install/test_basic_publisher_1:/home/nikita/lab_ws/install/test_basic_publisher:/home/nikita/lab_ws/install/test_basic_client:/home/nikita/lab_ws/install/lab2_trajectory_srv:/home/nikita/lab_ws/install/lab2_trajectory_service:/home/nikita/lab_ws/install/lab2_trajectory_client:/home/nikita/lab_ws/install/lab1_triangle_subscriber:/home/nikita/lab_ws/install/lab1_triangle_publisher:/home/nikita/lab_ws/install/lab1_triangle_msg:/home/nikita/lab_ws/install/lab1_subscriber_tr_rcv:/home/nikita/lab_ws/install/lab1_subscriber_diff:/home/nikita/lab_ws/install/lab1_rec_sen:/home/nikita/lab_ws/install/lab1_basic_subscriber:/home/nikita/lab_ws/install/lab1_basic_publisher_2:/home/nikita/lab_ws/install/lab1_basic_publisher_1:/opt/ros/humble</value>
+     <value type="QString">CMAKE_PREFIX_PATH=/home/nikita/lab_ws/install/test_triangle_subscriber:/home/nikita/lab_ws/install/test_triangle_publisher:/home/nikita/lab_ws/install/test_triangle_msg:/home/nikita/lab_ws/install/test_trajectory_srv:/home/nikita/lab_ws/install/test_trajectory_service:/home/nikita/lab_ws/install/test_trajectory_client:/home/nikita/lab_ws/install/test_subscriber_tr_rcv:/home/nikita/lab_ws/install/test_rec_sen:/home/nikita/lab_ws/install/test_pkg:/home/nikita/lab_ws/install/test_custom_srv:/home/nikita/lab_ws/install/test_custom_service:/home/nikita/lab_ws/install/test_custom_publisher:/home/nikita/lab_ws/install/test_custom_msg:/home/nikita/lab_ws/install/test_basic_subscriber:/home/nikita/lab_ws/install/test_basic_service:/home/nikita/lab_ws/install/test_basic_publisher_1:/home/nikita/lab_ws/install/test_basic_publisher:/home/nikita/lab_ws/install/test_basic_client:/home/nikita/lab_ws/install/lab2_trajectory_srv:/home/nikita/lab_ws/install/lab2_trajectory_service:/home/nikita/lab_ws/install/lab2_trajectory_client:/home/nikita/lab_ws/install/lab1_triangle_subscriber:/home/nikita/lab_ws/install/lab1_triangle_publisher:/home/nikita/lab_ws/install/lab1_triangle_msg:/home/nikita/lab_ws/install/lab1_subscriber_tr_rcv:/home/nikita/lab_ws/install/lab1_subscriber_diff:/home/nikita/lab_ws/install/lab1_rec_sen:/home/nikita/lab_ws/install/lab1_basic_subscriber:/home/nikita/lab_ws/install/lab1_basic_publisher_2:/home/nikita/lab_ws/install/lab1_basic_publisher_1</value>
+     <value type="QString">COLCON_PREFIX_PATH=/home/nikita/lab_ws/install</value>
+     <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:path</value>
+     <value type="QString">LD_LIBRARY_PATH=/home/nikita/lab_ws/install/test_triangle_msg/lib:/home/nikita/lab_ws/install/test_trajectory_srv/lib:/home/nikita/lab_ws/install/test_custom_srv/lib:/home/nikita/lab_ws/install/test_custom_msg/lib:/home/nikita/lab_ws/install/lab2_trajectory_srv/lib:/home/nikita/lab_ws/install/lab1_triangle_msg/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib</value>
+     <value type="QString">PATH=/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin</value>
+     <value type="QString">PYTHONPATH=/home/nikita/lab_ws/install/test_triangle_msg/local/lib/python3.10/dist-packages:/home/nikita/lab_ws/install/test_trajectory_srv/local/lib/python3.10/dist-packages:/home/nikita/lab_ws/install/test_custom_srv/local/lib/python3.10/dist-packages:/home/nikita/lab_ws/install/test_custom_msg/local/lib/python3.10/dist-packages:/home/nikita/lab_ws/install/lab2_trajectory_srv/local/lib/python3.10/dist-packages:/home/nikita/lab_ws/install/lab1_triangle_msg/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages</value>
+     <value type="QString">QT_QPA_PLATFORM=xcb</value>
+     <value type="QString">ROS_DISTRO=humble</value>
+     <value type="QString">ROS_LOCALHOST_ONLY=0</value>
+     <value type="QString">ROS_PYTHON_VERSION=3</value>
+     <value type="QString">ROS_VERSION=2</value>
+     <value type="QString">SHLVL=1</value>
+     <value type="QString">XMODIFIERS=@im</value>
+     <value type="QString">_=/usr/bin/env</value>
+    </valuelist>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Debug</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ROSProjectManager.ROSBuildConfiguration</value>
     <value type="int" key="ROSProjectManager.ROSBuildConfiguration.BuildSystem">2</value>

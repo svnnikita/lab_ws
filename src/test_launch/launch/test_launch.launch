@@ -1,0 +1,11 @@
+<launch>
+    <node pkg="test_parameters" exec="test_parameters_node" name="test_param_node_1" output="screen">
+        <param name="string_parameter" value="launch_test_1"/>
+        <param name="number_parameter" value="121.2"/>
+    </node>
+
+    <node pkg="test_parameters" exec="test_parameters_node" name="test_param_node_2" output="screen">
+        <param name="string_parameter" value="launch_test_2"/>
+        <param name="number_parameter" value="1441.2"/>
+    </node>
+</launch>
