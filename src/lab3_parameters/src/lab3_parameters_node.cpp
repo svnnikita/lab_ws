@@ -9,7 +9,7 @@ class TestParameters : public rclcpp::Node
 {
 public:
     TestParameters():
-        Node("lab2_parameters_node") // название узла.
+        Node("lab3_parameters_node") // название узла.
     {
         // Объявляем параметры - указываем имя и значение по умолчанию:
         this->declare_parameter("Vertex1_X", 1.0); // координаты первой вершины треугольника
