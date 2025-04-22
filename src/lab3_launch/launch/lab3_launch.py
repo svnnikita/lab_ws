@@ -28,9 +28,9 @@ def generate_launch_description():
         # ),
 
         Node(
-            package = "test_parameters",
-            executable = "test_parameters_node",
-            name = "test_param_node",
+            package = "lab3_parameters",
+            executable = "lab3_parameters_node",
+            name = "lab3_param_node",
             output = "screen",
 
             parameters = [
