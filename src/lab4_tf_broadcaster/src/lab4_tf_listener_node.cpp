@@ -25,10 +25,11 @@ class TestTfListener : public rclcpp::Node
 {
 public:
     TestTfListener():
-        Node("test_tf_listener_node"),
+        Node("lab4_tf_listener_node"),
 
         // Описание объектов указано в privat-части:
-        target_frame("sensor_link"),
+        target_frame_front("front_rangefinder_link"),
+        target_frame_rear("rear_rangefinder_link"),
         source_frame("world")
     {
         // Инициализация указателей необходима для того, чтобы: указать tf_listener, в каком буфере
@@ -49,44 +50,66 @@ private:
     // в некоторых случаях восстанавливать историю перемещений:
     std::unique_ptr<tf2_ros::Buffer> tf_buffer;
 
-    // Строки, которые будут хранить исходный фрэйм и целевой фрэйм, между
+    // Строки, которые будут хранить исходные фреймы и целевой фрейм, между
     // которыми будет определяться трансформация:
-    std::string target_frame, source_frame;
+    std::string target_frame_front, target_frame_rear, source_frame;
 
     // Принимаем даные о трансформации:
     void timer_callback() {
 
         // В данный объект загружаем необходимую трансформацию
-        geometry_msgs::msg::TransformStamped t;
+        geometry_msgs::msg::TransformStamped transform_front;
+        geometry_msgs::msg::TransformStamped transform_rear;
 
         try {
             // Указываем, между какими фреймами происходит трансформация:
-            t = tf_buffer->lookupTransform(source_frame,
-                                           target_frame,
-                                           tf2::TimePointZero); // максимально свежая информация.
+            transform_front = tf_buffer->lookupTransform(source_frame,
+                                                         target_frame_front,
+                                                         tf2::TimePointZero);
+
+            transform_rear = tf_buffer->lookupTransform(source_frame,
+                                                         target_frame_rear,
+                                                         tf2::TimePointZero);
 
             // Процедура переноса кватерниона в объект для последующего преобразования через
             // матрицу поворота в углы roll, pitch, yaw:
-            tf2::Quaternion q(
-                t.transform.rotation.x,
-                t.transform.rotation.y,
-                t.transform.rotation.z,
-                t.transform.rotation.w);
+            tf2::Quaternion quaternion_front(
+                transform_front.transform.rotation.x,
+                transform_front.transform.rotation.y,
+                transform_front.transform.rotation.z,
+                transform_front.transform.rotation.w);
 
-            tf2::Matrix3x3 m(q);
+            tf2::Quaternion quaternion_rear(
+                transform_rear.transform.rotation.x,
+                transform_rear.transform.rotation.y,
+                transform_rear.transform.rotation.z,
+                transform_rear.transform.rotation.w);
 
-            double roll, pitch, yaw;
+            tf2::Matrix3x3 matrix_front(quaternion_front);
+            tf2::Matrix3x3 matrix_rear(quaternion_rear);
 
-            m.getRPY(roll, pitch, yaw);
 
-            RCLCPP_INFO_STREAM(this->get_logger(),
-                               "Transformation: " <<
-                               "x: " << t.transform.translation.x <<
-                              " y: " << t.transform.translation.y <<
-                              " z: " << t.transform.translation.z <<
-                           " roll: " << roll <<
-                          " pitch: " << pitch <<
-                            " yaw: " << yaw);
+            double roll_front, pitch_front, yaw_front;
+            double roll_rear, pitch_rear, yaw_rear;
+
+            matrix_front.getRPY(roll_front, pitch_front, yaw_front);
+            matrix_rear.getRPY(roll_rear, pitch_rear, yaw_rear);
+
+            RCLCPP_INFO_STREAM(this->get_logger(),  "\n\n" <<
+                   "TRANSFORMATION\n"<< "FRONT_RANGEFINDER: " <<
+                               "x: " << transform_front.transform.translation.x <<
+                              " y: " << transform_front.transform.translation.y <<
+                              " z: " << transform_front.transform.translation.z << "\n" <<
+                           " roll: " << roll_front  <<
+                          " pitch: " << pitch_front <<
+                            " yaw: " << yaw_front   << "\n" <<
+                "REAR_RANGEFINDER: " <<
+                               "x: " << transform_rear.transform.translation.x <<
+                              " y: " << transform_rear.transform.translation.y <<
+                              " z: " << transform_rear.transform.translation.z <<  "\n" <<
+                           " roll: " << roll_rear  <<
+                          " pitch: " << pitch_rear <<
+                            " yaw: " << yaw_rear);
         }
 
         // Если же в процессе трансформации была допущена ошибка, то в этом

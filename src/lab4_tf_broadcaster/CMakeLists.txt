@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(test_tf_broadcaster)
+project(lab4_tf_broadcaster)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -32,18 +32,18 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-# test_tf_broadcaster_node.cpp
+# lab4_tf_broadcaster_node.cpp
 add_executable(${PROJECT_NAME}_node src/${PROJECT_NAME}_node.cpp)
 ament_target_dependencies(${PROJECT_NAME}_node rclcpp geometry_msgs tf2_ros)
 install(TARGETS
         ${PROJECT_NAME}_node
         DESTINATION lib/${PROJECT_NAME})
 
-# test_tf_listener_node.cpp
-add_executable(test_tf_listener_node src/test_tf_listener_node.cpp)
-ament_target_dependencies(test_tf_listener_node rclcpp geometry_msgs tf2_ros)
+# lab4_tf_listener_node.cpp
+add_executable(lab4_tf_listener_node src/lab4_tf_listener_node.cpp)
+ament_target_dependencies(lab4_tf_listener_node rclcpp geometry_msgs tf2_ros)
 install(TARGETS
-        test_tf_listener_node
+        lab4_tf_listener_node
         DESTINATION lib/${PROJECT_NAME})
 
 install(
